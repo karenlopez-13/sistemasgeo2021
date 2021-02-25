@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Practica 1</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+      <style>
+            #mapa {
+                  width: 100%;
+                  height: 500px;
+            }
+      </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                          <a class="navbar-brand" href="#">Mueblería</a>
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNav">
+                          <ul class="navbar-nav">
+                          <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                          </li>
+                          <li class="nav-item">
+                                <a class="nav-link" href="#servicios">Servicios</a>
+                          </li>
+                          <li class="nav-item">
+                                <a class="nav-link" href="#mapadeubicacion">Ubicación</a>
+                          </li>
+                          <!--<li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                              </li>-->
+                            </ul>
+                        </div>
+                  </div>
+            </nav>
+
+      </div>
+</div>
+
+
+            <div id="carouselExampleControls" data-aos="fade-right" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                        <div class="carousel-item active text-center">
+                          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" class="rounded" alt="...">
+                      </div>
+                        <div class="carousel-item text-center">
+                          <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="rounded" alt="...">
+                        </div>
+                        <div class="carousel-item text-center">
+                          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1135&q=80" class="rounded" alt="...">
+                        </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+              </button>
+        </div>
+
+
+
+
+<div class="container-fluid">
+  <div class="container">
+        <div class="row">
+              <div class="col-12">
+                    <h1>Descripción</h1>
+                    <p>Ofrecemos muebles de alta calidad; tenemos estilos modernos y baratos: comedores, salas, cocinas integrales, sillas, escritorios y mucho más. Echa un vistazo a nuestros productos y llevate lo que necesitas a un precio </p>
+              </div>
+        </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-light py-5">
+  <div class="container">
+        <div class="row">
+              <div class="col-12 col-md-4">
+                    <a name="servicios"></a>
+                    <img src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1051&q=80" alt="Imagen1" class="w-100 rounded shadow">
+                    <hr>
+                    <h2 class="p-3">Escritorios</h2>
+                    <p>Escritorio color blanco satinado</p>
+                    <p>Evite exponerlo a la humedad ya que podría causar su deteroración, es por ello que es solo para interiores.</p>
+                    <p>Precio $3,000</p>
+              </div>
+              <div class="col-12 col-md-4">
+                <img src="https://images.unsplash.com/photo-1552975084-6e027cd345c2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" alt="Imagen2" class="w-100 rounded shadow">
+                <h2 class="p-3">Mubeles para tv</h2>
+                <p>Mueble para tv estilo rústico</p>
+                <p>Precio $3,100</p>
+          </div>
+          <div class="col-12 col-md-4">
+                <img src="https://images.unsplash.com/photo-1574739782594-db4ead022697?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Imagen3" class="w-100 rounded shadow">
+                <hr>
+                <h2 class="p-3">Cocinas integrales</h2>
+                <p>Cocina integral muy completa en color blanco, estilo moderno</p>
+                <p>Incluye instalacion</p>
+                <P>Precio $32,150</P>
+          </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid py-5">
+<div class="container">
+    <div class="row">
+          <div class="col-12">
+                <a name="mapadeubicacion"></a>
+                <h2 class="text-center">MAPA DE UBICACIÓN</h2>
+                <div id="mapa"></div>
+          </div>
+    </div>
+</div>
+</div>
+<div class="container-fluid bg-dark py-5">
+    <div class="container">
+          <div class="row">
+                <div class="col-12">
+                      <h3 class="text-white">Pie de página</h3>
+                      <p class="text-white">Contáctanos. tel 4778538444. correo karenlopez91931@gmail.com</p>
+                </div>
+          </div>
+    </div>
+</div>
+
+
+<span>Photo by <a href="https://unsplash.com/@tianabo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tiana Borcherding</a> on <a href="https://unsplash.com/s/photos/furnitures?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>  <a href="https://unsplash.com/@miabaker?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mia Baker</a> on <a href="https://unsplash.com/t/business-work?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+
+    AOS.init();
+
+    function iniciaMapa() {
+          var coordenadas = {
+                lat : 21.152639, lng : -101.711598
+          }
+
+          var map = new google.maps.Map(document.getElementById('mapa'),
+                {
+                    center : coordenadas,
+                              zoom : 15 
+                        }
+                  ); 
+            }
+      </script>
+</body>
+</html>

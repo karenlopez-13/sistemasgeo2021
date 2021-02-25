@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> 
+    <style>
+        body{
+            background-color:cadetblue;
+        }
+
+        #mapa {
+              width: 100%;
+              height: 500px;
+        }
+  </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container bg-white">
+            <div class="row m-5">
+                <div class="col-12 p-5">
+                    <h1> Navigator </h1>
+                    <button onclick="obtieneDatos()">Obtiene datos del navegador</button>
+                    <ul id="navegador">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var navegador = document.getElementById("navegador");
+        var datos = navegador.getElementsByTagName("li");
+
+        function obtieneDatos(){
+            datos[0].innerHTML = "nombre del navegador: " + navigator.appCodeName;
+            datos[1].innerHTML = "version del navegador: " + navigator.appVersion;
+            datos[2].innerHTML = "estatus del internet: " + navigator.onLine;
+            datos[3].innerHTML = "plataforma: " + navigator.platform;
+        }
+        
+    </script>
+
+    <!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
