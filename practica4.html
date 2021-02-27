@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API estática de Google</title>
+</head>
+<body>
+
+    <button onclick="obtieneubicacion()">Obtiene Ubicación</button>
+    <div id="mapa" style= "padding-left: 50px; border: #CCC 10px solid; background-color: #efefef; width: 800px; height: 400px;"></div>
+
+    <script>
+
+        function obtieneubicacion(){
+
+            if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(muestraPosicion);
+            }
+            else{
+                alert("No");
+            }
+        }
+
+        function muestraPosicion(posicion){
+            var coordenadas = posicion.coords.latitude + "," + posicion.coords.longitude;
+            console.log(coordenadas);
+
+            var imageurl = "https://maps.googleapis.com/maps/api/staticmap?center="+ coordenadas +"&zoom=15&size=400x400&key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA";
+
+            document.getElementById("mapa").innerHTML = "<img src=" + imageurl + ">"
+
+        }
+    </script>
+    
+</body>
+</html>

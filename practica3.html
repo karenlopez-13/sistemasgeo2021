@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Karen Guadalupe López Rodríguez</title>
+</head>
+<body align="center">
+
+    <p> Haz click para obtener las coordenadas</p>
+
+    <button onclick="getLocation()"> Ver coordenadas </button>
+
+    <p id="mapa"></p>
+    
+    <script>
+
+        var x = document.getElementById("mapa");
+
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+
+
+            } 
+            else
+            {
+                x.innerHTML = "No tiene geolocalización";
+            }
+        }   
+        function showPosition (position) {
+            x.innerHTML = "Latitud: " + position.coords.latitude + "<br>" + "Longitud: " + position.coords.longitude;
+
+        }
+    </script>
+</body>
+</html>
