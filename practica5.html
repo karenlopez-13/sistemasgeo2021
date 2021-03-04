@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 5</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var informacion = "<h1>Ana Karen Guadalupe López Rodríguez</h1>"
+            informacion += "<p>ISSC 611</p>"
+            informacion += "<p>69639</p>"
+        
+        function iniciaMapa(){
+
+            propiedades = {
+                center: {
+                    lat: 21.152639, lng: -101.711598
+                },
+                zoom: 14
+            };
+            const mapa = document.getElementById("map");
+            const map = new google.maps.Map(mapa,propiedades);
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(position => {
+                    console.log(position);
+                    let posicion = {
+                        lat: posicion.coords.latitude,
+                        lat: posicion.coords.longitude
+                    }
+                });
+            }
+
+            let posicion = {
+                lat: 21.152639, lng: -101.711598
+            }
+
+            let propiedadesMarcador ={
+                position: posicion,
+                map,
+                title: "Marcador"
+            };
+
+            const marcador = new google.maps.Marker(propiedadesMarcador);
+
+            map.setCenter(posicion);
+
+            const infowindow = new google.maps.InfoWindow({
+                content: informacion
+            });
+
+            marcador.addListener("mouseover", () => {
+                infowindow.open(map,marcador);
+            });
+        }
+    </script>
+
+    <!--Bootstrap 5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- Google Maps -->
+    <script type='text/javascript' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
+</body>
+</html>
