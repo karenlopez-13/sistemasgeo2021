@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <title>Mapa de información por país Covid-19, en colaboración con los Alumnos de 6o Semestre de Sistemas de la Universidad DeLasalle Bajío hemos creado un mapa mundial con los casos de Covid-19 en tiempo real</title>
-
+<head>
+<title>Fetch4</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
-    
         #map {
         height: 100%;
         }
@@ -16,10 +16,15 @@
         margin: 0;
         padding: 0;
         }
+
     </style>
+
     </head>
+
     <body>
+
     <div id="map"></div>
+
     <script>
     
     var coordenadas = {
@@ -31,48 +36,60 @@
         center: coordenadas,
         zoom: 2
         }
+    
         function iniciaMapa() {
-            fetch('paises.json')
-            .then(function(response) {
-                response.json().then(function(datos) {
-                const map = new google.maps.Map(document.getElementById('map'), propiedades);
-                console.log(datos);
-                datos.forEach( marcador => {
-                    fetch('https://corona.lmao.ninja/countries')
-                    .then(function(respuesta) {
-                        respuesta.json().then(function(datospaises) {
-                            datospaises.forEach( registro => {
-                                if(registro.country==marcador.CountryName){
-                                    var informacion = "<strong>País:</strong> "+ registro.country +"<br><strong>Casos:</strong> " + registro.cases + "<br><strong>Nuevos hoy:</strong> " + registro.todayCases + "<br><strong>Muertes:</strong> " + registro.deaths + "<br><strong>Muertes Hoy:</strong> " + registro.todayDeaths + "<br><strong>Recuperados:</strong> " + registro.recovered + "<br><strong>Activos:</strong> " + registro.active + "<br><strong>Críticos:</strong> " + registro.critical + "<br><strong>Casos por millón:</strong> " + registro.casesPerOneMillion;
-                                    var infowindow = new google.maps.InfoWindow({
-                                    content: informacion
-                                });
+    fetch('paises.json')
+    .then(function(response) {
 
-                            let marker = new google.maps.Marker({
-                                map: map,
-                                position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
-                                        title: marcador.CountryName + registro.cases
-                                    });
+        response.json().then(function(datos) {
 
-                                    marker.addListener('click', function() {
-                                        infowindow.open(map, marker);
-                                    });
-                                }
-                            });
-                        });
+            const map = new google.maps.Map(document.getElementById('map'), propiedades);
+
+            //console.log(datos);
+
+            datos.forEach( marcador => {
+
+            fetch('https://corona.lmao.ninja/v3/covid-19/countries')
+            .then(function(respuesta) {
+
+                respuesta.json().then(function(datospaises) {
+                    datospaises.forEach( registro => {
+                        
+                    if(registro.country==marcador.CountryName){
+
+                    var informacion = "<strong>País:</strong> "+ registro.country +"<br><strong>Casos:</strong> " + registro.cases;
+                    var infowindow = new google.maps.InfoWindow({
+                        content: informacion
+                    });
+
+                    let marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
+                        title: marcador.CountryName + registro.cases
+                    });
+
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                        }
+                    });
                     });
                 });
             });
-        })
+        });
+    })
 
         .catch(function(error) {
             console.log('Hubo un problema con la petición Fetch:' + error.message);
         });
-        } 
-
-        </script>
-        <script async defer 
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa">
+    }
+    
     </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAv-m46ebIV9fqkE2fIBGeWunmGmBm2R24&callback=iniciaMapa" async defer></script>
+    
     </body>
 </html>
