@@ -112,6 +112,19 @@
                 cuenta++;
 
             });
+
+            document.getElementById('btnroadmap').addEventListener('click', function(){
+                map.setMapTypeId('roadmap');
+            });
+            document.getElementById('btnsatellite').addEventListener('click', function(){
+                map.setMapTypeId('satellite');
+            });
+            document.getElementById('btnhybrid').addEventListener('click', function(){
+                map.setMapTypeId('hybrid');
+            });
+            document.getElementById('btnterrain').addEventListener('click', function(){
+                map.setMapTypeId('terrain');
+            });
         }
     </script>
 
