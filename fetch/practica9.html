@@ -25,7 +25,7 @@
     <script>
         function iniciaMapa(){
 
-            var styleMapType = new google.maps.StyledMapType(
+            var styledMapType = new google.maps.StyledMapType(
                 [
                     {
                         "elementType": "geometry",
@@ -282,7 +282,7 @@
             var mapa = document.getElementById("map");
             var map = new google.maps.Map(mapa, propiedades);
 
-            map.mapTypes.set('style_map', styleMapType);
+            map.mapTypes.set('style_map', styledMapType);
             map.setMapTypeId('syle_map');
 
         }
