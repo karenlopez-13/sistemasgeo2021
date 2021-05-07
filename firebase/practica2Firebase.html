@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FireBase</title>
 
-    <!--Firebase-->
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
 
     <script src="https://kit.fontawesome.com/725910d27b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+
     <style>
-        html, body, div {
+        html, body{
             background-color:cornflowerblue;
+        }
+        div{
+            background-color:cornflowerblue;
+            width: 500px; 
+            border-radius: 20px;
         }
         h1, h3 {
             color:darkslategrey;
@@ -25,24 +29,24 @@
         
     </style>
 
-</head>
 
+</head>
 <body>
 
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <h3 style="background-color: #313131; color: white;"><i class="fas fa-boxes text-primary"></i> Lista de nombres </h3>
+                    <h3><i class="fas fa-boxes text-primary"></i> Lista de nombres </h3>
                 </div>
                 <div class="col-4">
-                    <button type="text" class="btn btn-primary"  data-toggle="modal" data-target="#ventananuevo"> Nuevo <i class="fas fa-plus"></i></button>
+                    <button type="text" class="btn btn-primary" data-toggle="modal" data-target="#ventananuevo"> Nuevo <i class="fas fa-plus"></i></button>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="container-fluid" style="background-color: #336dec; width: 500px; border-radius: 20px;">
+    <div class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 p-2">
@@ -85,11 +89,11 @@
 
     <div class="modal fade " id="ventanaeditar">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="background-color: #313131;">
+            <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title" style="color: white;">Editar producto</h4>
-                <button type="button" class="close" style="color: white;" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Editar producto</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <div class="modal-body">
@@ -117,7 +121,6 @@
         </div>
     </div>
 
-
     <script src="basededatos.js"></script>
     <script src="constantes.js"></script>
     <script src="registro.js"></script>
@@ -126,7 +129,6 @@
     <script src="actualizar.js"></script>
     <script src="servicio.js"></script>
    
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
