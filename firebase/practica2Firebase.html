@@ -7,46 +7,26 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
-
     <script src="https://kit.fontawesome.com/725910d27b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <style>
-        html, body{
-            background-color:cornflowerblue;
-        }
-        div{
-            background-color:cornflowerblue;
-            width: 500px; 
-            border-radius: 20px;
-        }
-        h1, h3 {
-            color:darkslategrey;
-        }
-        ul{
-            color:mintcream;
-        }
-        
-    </style>
-
-
+ 
 </head>
-<body>
+<body class="bg-light">
 
     <div class="container-fluid py-5">
         <div class="container">
             <div class="row">
                 <div class="col-8">
-                    <h3><i class="fas fa-boxes text-primary"></i> Lista de nombres </h3>
+                    <h3><i class="fas fa-boxes text-primary"></i> Lista de productos</h3>
                 </div>
                 <div class="col-4">
-                    <button type="text" class="btn btn-primary" data-toggle="modal" data-target="#ventananuevo"> Nuevo <i class="fas fa-plus"></i></button>
+                    <button type="text" class="btn btn-primary"  data-toggle="modal" data-target="#ventananuevo" >Nuevo <i class="fas fa-plus"></i></button>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="container-fluid">
+
+    <div class="container-fluid bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-8 p-2">
@@ -56,14 +36,19 @@
         </div>
     </div>
 
-    <div class="modal fade " id="ventananuevo">
-        <div class="modal-dialog modal-lg" >
-            <div class="modal-content" style="border-radius: 10px;">
 
-            <div class="modal-header" style="background-color: #313131; border-radius: none;">
-                <h4 class="modal-title">Nuevo nombre</h4>
+    <!-- The Modal -->
+    <div class="modal fade " id="ventananuevo">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Nuevo producto</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+
+            <!-- Modal body -->
             <div class="modal-body">
                 <form id="forma">
                     <div class="row">
@@ -79,6 +64,8 @@
                     </div>
                 </form>
             </div>
+
+            <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
@@ -87,15 +74,19 @@
         </div>
     </div>
 
+
+    <!-- The Modal -->
     <div class="modal fade " id="ventanaeditar">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
+            <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Editar producto</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
+            <!-- Modal body -->
             <div class="modal-body">
                 <form id="formaeditar">
                     <div class="row">
@@ -113,6 +104,7 @@
                 </form>
             </div>
 
+            <!-- Modal footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
             </div>
@@ -120,6 +112,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="basededatos.js"></script>
     <script src="constantes.js"></script>
@@ -129,9 +122,10 @@
     <script src="actualizar.js"></script>
     <script src="servicio.js"></script>
    
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
-</html>  
+</html>     
