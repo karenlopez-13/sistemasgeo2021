@@ -27,29 +27,28 @@
 
 <body class="bg-light">
     <nav style="font-family: Georgia, 'Times New Roman', Times, serif;" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
           <a class="navbar-brand" href="#">AKG FOOD</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+              <li class="nav-item logged-in">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#micuentamodal">Mi cuenta</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Salir</a>
+              <li class="nav-item logged-in">
+                <a class="nav-link" id="salir" href="#">Salir</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item logged-out">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item logged-out">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#registratemodal">Registro</a>
               </li>
             </ul>
-          </div>
         </div>
-      </nav>
+    </nav>
       
       <!-- Modal Ingresar -->
       <div class="modal fade" id="ingresarmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -80,6 +79,11 @@
                             </div>
                         </div>
                     </form>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span onclick="entrarGoogle()" class="btn btn-danger"> Ingresar con Google </span>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secundary" data-dismiss="modal"> Cerrar </button>
@@ -102,17 +106,32 @@
                       <form id="formaregistrate">
                           <div class="row">
                               <div class="col-12 m-2">
-                                  <input type="email" id="rcorreo" class="form-control" placeholder="ingresa tu correo" required>
+                                  <input type="text" id="rnombre" class="form-control" placeholder="ingresa tu nombre" required>
                               </div>
                           </div>
+                          <div class="row">
+                            <div class="col-12 m-2">
+                                <input type="text" id="rcorreo" class="form-control" placeholder="ingresa tu correo" required>
+                            </div>
+                        </div>
                           <div class="row">
                               <div class="col-12 m-2">
                                   <input type="password" id="rcontrasena" class="form-control" placeholder="ingresa tu contraseña" required>
                               </div>
                           </div>
                           <div class="row">
+                            <div class="col-12 m-2">
+                                <input type="number" step="any" id="rtelefono" class="form-control" placeholder="ingresa tu teléfono" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 m-2">
+                                <input type="text" id="rdireccion" class="form-control" placeholder="ingresa tu dirección" required>
+                            </div>
+                        </div>
+                          <div class="row">
                               <div class="col-12 text-center">
-                                  <button style="color: rgb(3, 3, 3);" class="btn btn-outline-secondary"> Registrarse </button>
+                                  <input type="submit" style="color: rgb(3, 3, 3);" class="btn btn-outline-secondary" value="Registrarse">
                                   <p class="error text-danger"></p>
                                 </div>
                             </div>
@@ -136,7 +155,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body"> 
+                <div class="modal-body datosdelacuenta"> 
                     Info de la cuenta 
                 </div>
                 <div class="modal-footer">
@@ -148,7 +167,7 @@
 
       <div class="container">
           <div class="row text-center" id="listadeplatillos">
-              <div class="col-12 col-md-4">
+              <!-- <div class="col-12 col-md-4">
                   <img src="https://images-gmi-pmc.edge-generalmills.com/7485018f-71f9-44ad-9a28-04fd44cab253.jpg" alt="Pasta">
                   <p> Pasta Alfredo </p>
                   <p> $80.00 </p>
@@ -162,7 +181,7 @@
                 <img src="https://www.nestleprofessional.com.mx/sites/g/files/gfb321/f/styles/recipe/public/media/pasta_florentina_foto.jpg?itok=NBUINPM5" alt="Pasta">
                 <p> Pasta Florentina </p>
                 <p> $130.00 </p>
-            </div>
+            </div> -->
           </div>
       </div>
       
@@ -191,6 +210,8 @@
         const db = firebase.firestore();
         </script>
 
-        <script src="/AutentificacionFB/scripts/autorizacion.js"></script>
+        <!--<script src="/AutentificacionFB/scripts/autorizacion.js"></script>-->
+        <script src="scripts/autorizacion.js" ></script>
+        <script src="scripts/index.js"></script>
     </body>
 </html>
